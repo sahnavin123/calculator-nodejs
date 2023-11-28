@@ -7,18 +7,19 @@ import {
 } from "../utils/calcultorHelper.js";
 
 let calculatorObject = {};
+export const getCalculatorObject = () => calculatorObject;
 
 export const initCalculator = asyncHandler(async (req, res) => {
   const { operator, num1, num2 } = req.body;
 
-  if (!isValidOperator(operator)) {
-    res.status(400);
-    throw new Error("Invalid operator");
-  }
-
   if (!operator || !num1 || !num2) {
     res.status(400);
     throw new Error("Missing required parameters");
+  }
+
+  if (!isValidOperator(operator)) {
+    res.status(400);
+    throw new Error("Invalid operator");
   }
 
   const id = Math.floor(Math.random() * 900) + 100;
@@ -32,14 +33,14 @@ export const initCalculator = asyncHandler(async (req, res) => {
 export const performOperationController = asyncHandler(async (req, res) => {
   const { operator, num, id } = req.body;
 
-  if (!isValidOperator(operator)) {
-    res.status(400);
-    throw new Error("Invalid operator");
-  }
-
   if (!operator || !num || !id) {
     res.status(400);
     throw new Error("Missing required parameters");
+  }
+
+  if (!isValidOperator(operator)) {
+    res.status(400);
+    throw new Error("Invalid operator");
   }
 
   if (!calculatorObject[id]) {
