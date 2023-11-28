@@ -7,7 +7,8 @@
   "scripts": {
     "start": "node src/index.js",
     "dev": "nodemon src/index.js",
-    "test": "mocha"
+    "test": "mocha",
+    "test-report": "mocha test --reporter mochawesome --require mochawesome/register"
   },
   "author": "Navin Kumar Sah",
   "license": "ISC",
@@ -21,6 +22,7 @@
     "chai": "^4.3.10",
     "chai-http": "^4.4.0",
     "mocha": "^10.2.0",
+    "mochawesome": "^7.1.3",
     "sinon": "^17.0.1"
   }
 }

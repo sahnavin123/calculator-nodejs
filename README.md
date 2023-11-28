@@ -48,6 +48,12 @@ The application will be accessible at http://localhost:8000
 npm run test
 ```
 
+### To generate test-report
+
+```
+npm run test-report
+```
+
 ## API Endpoints
 
 ### 1. Initialize Calculator
