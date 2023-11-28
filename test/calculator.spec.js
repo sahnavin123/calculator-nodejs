@@ -194,8 +194,8 @@ describe("Controller Tests", () => {
 
       const res = await chai
         .request(app)
-        .get(`/api.com/reset?id=${existingId}`)
-        .send();
+        .get(`/api.com/reset`)
+        .send({ id: existingId });
 
       expect(res).to.have.status(200);
 
@@ -208,7 +208,7 @@ describe("Controller Tests", () => {
     });
 
     it("should handle missing parameters gracefully", async () => {
-      const res = await chai.request(app).get("/api.com/reset").send();
+      const res = await chai.request(app).get("/api.com/reset").send({});
 
       expect(res).to.have.status(400);
 
@@ -217,9 +217,10 @@ describe("Controller Tests", () => {
 
     it("should handle calculator not found gracefully", async () => {
       const res = await chai
-        .request(app)
-        .get("/api.com/reset?id=nonexistentId")
-        .send();
+      .request(app)
+      .get(`/api.com/reset`)
+      .send({ id: '123' });
+
 
       expect(res).to.have.status(404);
 

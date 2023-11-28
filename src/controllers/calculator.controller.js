@@ -93,7 +93,7 @@ export const undoOperationController = asyncHandler(async (req, res) => {
 });
 
 export const resetCalculatorController = asyncHandler(async (req, res) => {
-  const { id } = req.query;
+  const { id } = req.body;
 
   if (!id) {
     res.status(400);
