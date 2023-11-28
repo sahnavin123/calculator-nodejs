@@ -10,6 +10,9 @@ To set up and run the calculator API locally, follow these steps:
 
 - [Node.js](https://nodejs.org/) installed on your machine.
 
+### Postman collection link 
+- [click here](https://www.postman.com/sonarnks/workspace/calculatorproject/collection/28600942-77d86e1c-b19c-4a06-a4a7-451fdb8741c8?action=share&creator=28600942)
+
 ### Steps
 
 **Clone the Repository:**
@@ -34,12 +37,13 @@ PORT=YOUR_PORT_NUMBER
 ### Run the Application
 
 ```
-npm start  
-``` 
+npm start
+```
 
 The application will be accessible at http://localhost:8000
 
-### To test the Application run 
+### To test the Application run
+
 ```
 npm run test
 ```
